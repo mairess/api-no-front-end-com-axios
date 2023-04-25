@@ -28,8 +28,21 @@ function getUser(id){
     .catch(error => console.error(error))
 }
 
+function updataUser(id, userUpdated){
+    axios.put(`${url}/${id}`, userUpdated)
+    .then(response => console.log(response))
+    .catch(error => console.error(error))
+}
+const userUpdated = {
+    name: "Fernando Xavier",
+    avatar: "https://picsum.photos/200/300",
+    city: "Fortaleza"
+}
+
+updataUser(3, userUpdated)
+
 getUsers()
-getUser(2)
+getUser(3)
 
 const newUser = {
     name: "Carlos Antônio",
