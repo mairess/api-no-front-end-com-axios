@@ -33,22 +33,29 @@ function updataUser(id, userUpdated){
     .then(response => console.log(response))
     .catch(error => console.error(error))
 }
-const userUpdated = {
-    name: "Fernando Xavier",
-    avatar: "https://picsum.photos/200/300",
-    city: "Fortaleza"
-}
 
-updataUser(3, userUpdated)
+function deletUser (id){
+    axios.delete(`${url}/${id}`)
+    .then(response => console.log(response))
+    .catch(error => console.error(error))
+}
+deletUser(1)
+
 
 getUsers()
-getUser(3)
+getUser(1)
 
 const newUser = {
     name: "Carlos Antônio",
     avatar: "https://picsum.photos/200/300",
     city: "Belem"
 }
-
 // addNewUser(newUser)
+
+const userUpdated = {
+    name: "Fernando Xavier",
+    avatar: "https://picsum.photos/200/300",
+    city: "Fortaleza"
+}
+// updataUser(3, userUpdated)
 
