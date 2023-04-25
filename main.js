@@ -16,7 +16,20 @@ function addNewUser(newUser){
     .catch(error => console.error(error))
 }
 
+function getUser(id){
+    axios.get(`${url}/${id}`)
+    .then(response =>{
+        
+        userName.textContent = response.data.name
+        userCity.textContent = response.data.city
+        userID.textContent = response.data.id
+        userAvatar.src = response.data.avatar
+    })
+    .catch(error => console.error(error))
+}
+
 getUsers()
+getUser(2)
 
 const newUser = {
     name: "Carlos Antônio",
